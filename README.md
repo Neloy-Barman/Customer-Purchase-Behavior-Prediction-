@@ -55,19 +55,103 @@
             <th>Columns</th>
         </tr>
         <tr>
-            <td>Online_Retail_Data_Set</td>
-            <td>csv</td>
-            <td>541909</td>
-            <td>8</td>
+            <td align="center">Online_Retail_Data_Set</td>
+            <td align="center">csv</td>
+            <td align="center">541909</td>
+            <td align="center">8</td>
         </tr>
         <tr>
-            <td>final_dataset</td>
-            <td>csv</td>
-            <td>3616</td>
-            <td>5</td>
+            <td align="center">final_dataset</td>
+            <td align="center">csv</td>
+            <td align="center">3616</td>
+            <td align="center">5</td>
         </tr>
     </table>
 </div>
+
+
+<h3><code style="color:blue">EDA & Data Visualization</code></h3>
+
+<div align="center">
+    <img src="assets/plotting.png" height="200">
+</div>
+
+<div align="center">
+    <img src="assets/eda_rel.png" height="550">
+</div>
+
+
+<h3><code style="color:blue">Dimensionality Reduction</code></h3>
+
+<strong>I used PCA to extract features into lower dimension and extracted 2 features. Then labeling these features as X1 and X2, I plot the points. But unfortunately my normal go through is not able to find any differences to differentiate the datapoints.</strong>
+
+<div align="center">
+    <img src="assets/pca_rel_bef_cl.png" height="200">
+</div>
+
+
+<h3><code style="color:blue">Model Selection</code></h3>
+
+<strong>As the dataset is unsupervised, so, there was no labeling with the data. So, we chose to implement clustering and cluster the same behavioral in the same segment.</strong>
+
+
+<h3><code style="color:blue">Dataset Splitting</code></h3>
+
+<strong>We can split our dataset into train and test split. As we are working with the unsupervised dataset, then while evaluating the model performance with the test set, we can't ensure it's clustering accuracy because we don't know the ground truth label or which cluster each sample belongs to. That's why we will be using the whole dataset as the training set and finally, evaluate the model performance using unsupervised performance metrics.</strong>
+
+
+<h3><code style="color:blue">Ensemble Model Implementation</code></h3>
+
+<strong>We choose to implement an ensemble algorithm from scratch using 2 individual clustering algorithms. Then with the help of maximum voting, we decided the final value.</strong>
+<ul>
+    <li>K-Means</li>
+    <li>K-Medoids</li>
+</ul>
+<strong>The criterion for the individual algorithms were till convergence. It means both the algorithms inside the ensemble will run till their centroids and medoids are found respectively.</strong>
+
+
+<h3><code style="color:blue">Experimentation and Evaluation</code></h3>
+
+<strong>We will experiment with the own implemented model and the dataset. We will try to cluster our dataset into different number of groups. To evaluate, which group shows good clustering, we will use "Silhoutte Co-efficient" as the evaluation metrics. The value close to +1 means well-seperated clusters, value close to 0 means overlapping clusters with no clear seperations and -1 means the most overlapping clusters.</strong>
+
+<div align="center">
+    <table>
+        <tr>
+            <th>Cluster Numbers</th>
+            <th>Silhoutte Coefficient</th>
+        </tr>
+        <tr>
+            <td align="center">2</td>
+            <td align="center">0.67909</td>
+        </tr>
+        <tr>
+            <td align="center">3</td>
+            <td align="center">0.54980</td>
+        </tr>
+        <tr>
+            <td align="center">4</td>
+            <td align="center">0.48623</td>
+        </tr>
+    </table>
+</div>
+
+<strong>As we increase the number of clusters, our silhoutte coefficient gets far from +1. So, we will proceed with 2 clusters, as it gives the highest silhoutte sccore.</strong>
+
+
+<h3><code style="color:blue">Post Clustering Analysis</code></h3>
+
+<strong>Now, if we look at the scatter plot with the features after applying PCA, then the datapoints are clearly placed in different regions carrying their respectable clustering characteristics. </strong>
+
+<div align="center">
+    <img src="assets/pca_rel.png" height="200">
+</div>
+
+<strong>After clustering the datapoints we can see a clear differentiation between the datapoints even in the features before extraction. Looking at the "Revenue_given vs Frequency" and "Revenue_given vs Recency" gives us a clear differentiation. On the contrary, "Frequency vs Recency" scatter plot is not clustering differentiable. Although the categorical variable "United Kingdom Or Not" is present both type of clusters and to me, it doesn't show any significant differentiable characteristics.</strong>
+
+<div align="center">
+    <img src="assets/given_features_rel.png" height="200">
+</div>
+
 
 
 
