@@ -72,11 +72,13 @@
 
 <h3><code style="color:blue">EDA & Data Visualization</code></h3>
 
-<strong></strong>
+<strong>At first I tried to plot the characteristics extracted from each of the customer. But looking at the relationships between those variables for individual customer doesn't show any characteristics that can differentiate from others or a group of people.</strong>
 
 <div align="center">
     <img src="assets/plotting.png" height="200">
 </div>
+
+<strong>We plotted one variable vs other variables relationship using pairplots. Even with differentiating the datapoints based on UK residant or not, the datapoints looks crowded. The normal go throgh can't define a boundary line in between these to cluster the data. We can't see any kind of noticable relationships such as, linear or exponential relation between the variables. So, we have to extract features using featured extraction techniques.</strong>
 
 <div align="center">
     <img src="assets/eda_rel.png" height="550">
