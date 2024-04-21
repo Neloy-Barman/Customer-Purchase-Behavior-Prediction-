@@ -72,6 +72,8 @@
 
 <h3><code style="color:blue">EDA & Data Visualization</code></h3>
 
+<strong></strong>
+
 <div align="center">
     <img src="assets/plotting.png" height="200">
 </div>
