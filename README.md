@@ -157,6 +157,13 @@
 </div>
 
 
+<h3><code style="color:blue">Model Deployment</code></h3>
+
+<div align="center">
+    <img src="assets/ml_deploy.png">
+</div>
+
+
 
 
 
