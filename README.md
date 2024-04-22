@@ -156,11 +156,24 @@
     <img src="assets/given_features_rel.png" height="200">
 </div>
 
+<h3><code style="color:blue">Observation</code></h3>
+
+<ul>
+    <li><strong>The customers sharing same types of purchasing behavior falls within the same clusters.</strong></li>
+    <li><strong>We can say the customers are mainly differentiated based on the revenue contributed to the company.</strong></li>
+    <li><strong>Other features, frequency and recency are all scattered within all types of clusters.</strong></li>
+    <li><strong>We think, our newly extracted feature whether the customer is from UK or not doesn't make any noticable impact.</strong></li>
+    <li><strong>The dimensionality reduction technique PCA definitly merged the exisiting features and created new contributing ones to the model training properly.</strong></li>
+</ul>
+
+
 
 <h3><code style="color:blue">Model Deployment</code></h3>
 
+<strong>I deployed the clustering model using huggingface. Here you can just input the required features and cluster the customers. Check out the deployment <a href="https://huggingface.co/spaces/nelbarman053/Customer-Purchase-Behavior-Prediction">here</a>.</strong>
+
 <div align="center">
-    <img src="assets/ml_deploy.png">
+    <img src="assets/ml_deployment.png" height="600">
 </div>
 
 
